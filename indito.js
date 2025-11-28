@@ -26,6 +26,7 @@ app.use(
   })
 );
 
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -43,3 +44,5 @@ const port = 4142;
 app.listen(port, () => {
   console.log("WebReceptek fut a " + port + " porton");
 });
+
+console.log("meszter-hu módosítás 3");
