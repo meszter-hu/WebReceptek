@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+
+<h2>Regisztracio</h2>
+
+<form action="/register" method="post" class="row g-3">
+  <div class="col-md-6">
+    <label class="form-label">Nev</label>
+    <input type="text" name="nev" class="form-control" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Jelszo</label>
+    <input type="password" name="jelszo" class="form-control" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Jelszo ujra</label>
+    <input type="password" name="jelszo2" class="form-control" required>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Regisztralok</button>
+  </div>
+</form>
+
+<%- include("partials/footer") %>

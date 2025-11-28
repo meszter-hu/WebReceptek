@@ -1,0 +1,28 @@
+<%- include("partials/header") %>
+
+<h2>Kapcsolat</h2>
+<p>Uzenj a WebReceptek oldal tulajdonosanak.</p>
+
+<form action="/kapcsolat" method="post" class="row g-3">
+  <div class="col-md-6">
+    <label class="form-label">Nev</label>
+    <input type="text" name="nev" class="form-control" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" required>
+  </div>
+  <div class="col-12">
+    <label class="form-label">Targy</label>
+    <input type="text" name="targy" class="form-control">
+  </div>
+  <div class="col-12">
+    <label class="form-label">Uzenet</label>
+    <textarea name="uzenet" class="form-control" rows="5" required></textarea>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Kuldes</button>
+  </div>
+</form>
+
+<%- include("partials/footer") %>

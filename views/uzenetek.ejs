@@ -1,0 +1,34 @@
+<%- include("partials/header") %>
+
+<h2>Erkezett uzenetek</h2>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nev</th>
+        <th>Email</th>
+        <th>Targy</th>
+        <th>Uzenet</th>
+        <th>Kuldve</th>
+        <th>Felhasznalo</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% uzenetek.forEach(function(u){ %>
+      <tr>
+        <td><%= u.id %></td>
+        <td><%= u.nev %></td>
+        <td><%= u.email %></td>
+        <td><%= u.targy %></td>
+        <td><%= u.uzenet %></td>
+        <td><%= u.created_at.toISOString().slice(0,19).replace("T"," ") %></td>
+        <td><%= u.felhasznalo || "" %></td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("partials/footer") %>

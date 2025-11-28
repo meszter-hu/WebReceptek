@@ -1,0 +1,33 @@
+<%- include("partials/header") %>
+
+<h2><%= recept ? "Recept szerkesztese" : "Uj recept" %></h2>
+
+<form method="post" class="row g-3">
+  <div class="col-md-6">
+    <label class="form-label">Nev</label>
+    <input type="text" name="nev" class="form-control" value="<%= recept ? recept.nev : "" %>" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Kategoria</label>
+    <select name="kategoriaid" class="form-select" required>
+      <option value="">Valassz</option>
+      <% kategoriak.forEach(function(k){ %>
+        <option value="<%= k.id %>" <%= recept && recept.kategoriaid === k.id ? "selected" : "" %>><%= k.nev %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Feliras datuma</label>
+    <input type="text" name="felirdatum" class="form-control" value="<%= recept ? (recept.felirdatum || "") : "" %>">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Elso datum</label>
+    <input type="text" name="elsodatum" class="form-control" value="<%= recept ? (recept.elsodatum || "") : "" %>">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Mentes</button>
+    <a href="/crud/receptek" class="btn btn-secondary">Megse</a>
+  </div>
+</form>
+
+<%- include("partials/footer") %>

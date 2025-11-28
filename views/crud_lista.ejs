@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+
+<h2>Minta a CRUD alkalmazashoz:</h2>
+
+<div class="crud-box">
+  <h3>Receptek</h3>
+  <p><a href="/crud/receptek/uj">Uj recept hozzaadasa</a></p>
+  <table class="crud-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nev</th>
+        <th>Kategoria</th>
+        <th>Feliras datuma</th>
+        <th>Elso datum</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% receptek.forEach(function(r){ %>
+      <tr>
+        <td><%= r.id %></td>
+        <td><%= r.nev %></td>
+        <td><%= r.kategoria || "" %></td>
+        <td><%= r.felirdatum || "" %></td>
+        <td><%= r.elsodatum || "" %></td>
+        <td><a href="/crud/receptek/szerkeszt/<%= r.id %>">Edit</a></td>
+        <td><a href="/crud/receptek/torol/<%= r.id %>" onclick="return confirm('Biztosan torlod?');">Delete</a></td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("partials/footer") %>
